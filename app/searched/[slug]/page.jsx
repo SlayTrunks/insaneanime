@@ -8,7 +8,7 @@ import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 
 const page = ({ params}) => {
-    const [api, setApi] = useState();
+    const [api, setApi] = useState([]);
     const url = `https://api.consumet.org/anime/gogoanime/${params.slug}`;
     useEffect(() => {
         const fetchData = async () => {
