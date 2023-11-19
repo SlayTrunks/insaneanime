@@ -5,9 +5,10 @@ import axios from 'axios';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Navbar from '@/components/Navbar';
+import Image from 'next/image';
 
 const page = ({ params}) => {
-    const [api, setApi] = useState(null);
+    const [api, setApi] = useState();
     const url = `https://api.consumet.org/anime/gogoanime/${params.slug}`;
     useEffect(() => {
         const fetchData = async () => {
@@ -27,15 +28,15 @@ const page = ({ params}) => {
         };
     
         fetchData();
-      }, [url]);
+      }, [api]);
       
   return (
-   <div className='overflow-hidden pl-16 h-screen bg-black'>
+   <div className='overflow-y-scroll overflow-x-hidden pl-16 h-screen bg-black'>
     <Head>
       <title>Result for {params.slug}</title>
     </Head>
    <Navbar/>
-   <div className='text-white-400 overflow-hidden w-[99vw]   text-orange-400 '>
+   <div className='text-white-400  w-[99vw]   text-orange-400 '>
       <div  >
         <span className='ml-10 pt-10 text-3xl font-bold text-orange-400'>Search result for {params.slug}</span> 
     
@@ -50,7 +51,7 @@ const page = ({ params}) => {
             className='m-3  h-80 w-[13rem] flex items-center justify-center flex-col'
             
           >
-            <img className='h-60 w-50' src={item.image} alt="" />
+            <Image width={150} height={240}  src={item.image} alt="" />
             <p>
               {item.title}
             </p>

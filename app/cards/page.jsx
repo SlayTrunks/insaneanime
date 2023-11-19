@@ -26,7 +26,7 @@ const Cards = ({ title, animeDetails }) => {
         };
     
         fetchData();
-      }, [url]);
+      }, [api]);
       
   return (
     <Parent className='bg-black text-white'>
