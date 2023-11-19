@@ -22,7 +22,7 @@ export default function Page({ params }) {
     };
 
     fetchData();
-  }, []);
+  }, [url]);
 
   if (isLoading) {
     return <Loading />;

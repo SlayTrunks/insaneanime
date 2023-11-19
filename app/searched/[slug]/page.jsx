@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
-
+import Head from 'next/head';
 import styled from 'styled-components';
 import Navbar from '@/components/Navbar';
 
@@ -31,6 +31,9 @@ const page = ({ params}) => {
       
   return (
    <div className='overflow-hidden pl-16 h-screen bg-black'>
+    <Head>
+      <title>Result for {params.slug}</title>
+    </Head>
    <Navbar/>
    <div className='text-white-400 overflow-hidden w-[99vw]   text-orange-400 '>
       <div  >

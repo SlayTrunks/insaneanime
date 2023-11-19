@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import mainimg from "../public/mainimg.png";
 import Cards from "@/components/Cards";
+import Head from "next/head";
 
 const Home = () => {
   const [api, setApi] = useState([]);
@@ -37,7 +38,14 @@ const Home = () => {
   };
 
   return (
+    <div>
+ <Head>
+        <title>My page title</title>
+        <meta name="description" content="Your description here" />
+        {/* Other meta tags */}
+      </Head>
     <main className="w-screen h-screen bg-black text-white overflow-hidden">
+      
       <div className="h-[20vh] pt-7">
         <h1 className="font-bold text-orange-400 flex justify-center text-3xl">
           Insane anime
@@ -95,6 +103,7 @@ const Home = () => {
         </Link>
       </div>
     </main>
+    </div>
   );
 }
 
